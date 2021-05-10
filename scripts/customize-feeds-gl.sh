@@ -33,15 +33,6 @@ rm -rf /workdir/openwrt/feeds/packages/net/wget
 cp -rp /workdir/lede/package/lean/wget /workdir/openwrt/feeds/packages/net/wget
 cp -rp /workdir/lede/package/lean/wget /workdir/openwrt/package/lean/wget
 
-# Clone community packages to package/community
-mkdir package/community
-cd /workdir/openwrt/package/community
-
-# Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
-
-# Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 
 #add sirpdboy
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
@@ -52,6 +43,15 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-v
 # add openclash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/diy/luci-app-openclash
 
+# Clone community packages to package/community
+mkdir package/community
+cd /workdir/openwrt/package/community
+
+# Add Lienol's Packages
+git clone --depth=1 https://github.com/Lienol/openwrt-package
+
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 # Add gotop
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
 
