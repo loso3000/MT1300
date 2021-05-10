@@ -38,8 +38,8 @@ cd /workdir/openwrt
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netspeedtest ./package/new/luci-app-netspeedtest
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset ./package/new/luci-app-autotimeset
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
+# svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
 
 # Clone community packages to package/community
 mkdir package/community
