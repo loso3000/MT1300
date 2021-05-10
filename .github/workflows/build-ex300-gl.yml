@@ -9,7 +9,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build MT1300 from GL-iNet
+name: Build ex300 from GL-iNet
 
 on:
   repository_dispatch:
