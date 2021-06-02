@@ -13,19 +13,16 @@ name: Build MT1300 from Lienol source
 
 on:
   repository_dispatch:
-  release:
-    types: published
-
-  push:
-    branches:
-      - main
-    paths:
-      - '.config.lienol'
-
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+  watch:
+    types: started
 #  schedule:
-#    - cron: 0 8 * * 5
-#  watch:
-#    types: started
+#    - cron: 0 21 */7 * * 
 
 env:
   REPO_OP: https://github.com/Lienol/openwrt
