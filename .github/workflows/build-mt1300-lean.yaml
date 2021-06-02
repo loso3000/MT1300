@@ -32,7 +32,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   PATCH_PATH: patch
-  CONFIG_FILE: .config.lean
+  CONFIG_FILE: mt1300.lean
   CUSTOM_FEEDS: scripts/customize-feeds-lean.sh
   CUSTOM_CONFIG: scripts/customize-config.sh
   #SSH_ACTIONS: false
