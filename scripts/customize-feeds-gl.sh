@@ -35,9 +35,9 @@ cp -rp /workdir/lede/package/lean/wget /workdir/openwrt/package/lean/wget
 
 cd /workdir/openwrt
 #add sirpdboy
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netspeedtest ./package/new/luci-app-netspeedtest
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset ./package/new/luci-app-autotimeset
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netspeedtest ./package/new/luci-app-netspeedtest
+# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset ./package/new/luci-app-autotimeset
 # svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
 
