@@ -2,9 +2,9 @@
 
 ############# Modify default parameters here #################
 WORKDIR=/workdir
-HOSTNAME=MT1300
+HOSTNAME=GliNet
 IPADDRESS=192.168.8.1
-SSID=MT1300
+SSID=Openwrt
 ENCRYPTION=psk2+ccmp
 KEY=password
 LEAN_SETTINGS=/workdir/openwrt/package/lean/default-settings/files/zzz-default-settings
@@ -14,7 +14,7 @@ LIENOL_SETTINGS=/workdir/openwrt/package/default-settings/files/zzz-default-sett
 cd "$WORKDIR/openwrt"
 
 # Modify default Hostname
-sed -i "s/hostname='OpenWrt'/hostname='$HOSTNAME'/g" package/base-files/files/bin/config_generate
+# sed -i "s/hostname='OpenWrt'/hostname='$HOSTNAME'/g" package/base-files/files/bin/config_generate
 
 # Modify default IP, can not use this sed command to modify config_generate to change the default network ipaddress in 21.02.
 #sed -i 's/192.168.1.1/$IPADDRESS/g' package/base-files/files/bin/config_generate
