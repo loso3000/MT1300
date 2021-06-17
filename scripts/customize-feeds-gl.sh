@@ -7,7 +7,7 @@ git clone --depth=1 https://github.com/fw876/helloworld
 
 cd /workdir/openwrt
 cd /workdir/lede/package/lean
-plist="shadowsocksr-libev pdnsd-alt microsocks dns2socks simple-obfs v2ray-plugin v2ray xray trojan ipt2socks redsocks2 kcptun luci-app-zerotier"
+plist="redsocks2 tcpping luci-app-zerotier"
 for dir in $plist
 do
     if [ -d $dir ]
@@ -20,10 +20,10 @@ do
 done
 
 cd /workdir/openwrt
-[ -d /workdir/openwrt/feeds/gli_pub/shadowsocks-libev ] && mv /workdir/openwrt/feeds/gli_pub/shadowsocks-libev /workdir/openwrt/feeds/gli_pub/shadowsocks-libev.bak
+[ -d /workdir/openwrt/feeds/gli_pub/shadowsocks-libev ] && rm -rf /workdir/openwrt/feeds/gli_pub/shadowsocks-libev  # /workdir/openwrt/feeds/gli_pub/shadowsocks-libev.bak
 if [ -d /workdir/lede/feeds/packages/net/shadowsocks-libev ]
 then
-    [ -d /workdir/openwrt/feeds/packages/net/shadowsocks-libev ] && mv /workdir/openwrt/feeds/packages/net/shadowsocks-libev /workdir/openwrt/feeds/packages/net/shadowsocks-libev.bak
+    [ -d /workdir/openwrt/feeds/packages/net/shadowsocks-libev ] && rm -rf /workdir/openwrt/feeds/packages/net/shadowsocks-libev # /workdir/openwrt/feeds/packages/net/shadowsocks-libev.bak
     [ -d /workdir/openwrt/feeds/gli_pub ] && cp -r /workdir/lede/feeds/packages/net/shadowsocks-libev /workdir/openwrt/feeds/gli_pub/shadowsocks-libev
     [ -d /workdir/openwrt/package/lean/helloworld ] && cp -r /workdir/lede/feeds/packages/net/shadowsocks-libev /workdir/openwrt/package/lean/helloworld/
     cp -r /workdir/lede/feeds/packages/net/shadowsocks-libev /workdir/openwrt/feeds/packages/net/shadowsocks-libev
@@ -42,39 +42,39 @@ cd /workdir/openwrt
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
 
 # Clone community packages to package/community
-mkdir package/community
-cd /workdir/openwrt/package/community
+# mkdir package/community
+# cd /workdir/openwrt/package/community
 
 # Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
+# git clone --depth=1 https://github.com/Lienol/openwrt-package  /workdir/openwrt/package/new/
 
 # Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  /workdir/openwrt/package/new/passwall
 # Add gotop
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop /workdir/openwrt/package/new/totop
 
 
 # Add adbyby
-cp -r /workdir/lede/package/lean/adbyby ./
-cp -r /workdir/lede/package/lean/luci-app-adbyby-plus ./
+# cp -r /workdir/lede/package/lean/adbyby ./
+# cp -r /workdir/lede/package/lean/luci-app-adbyby-plus ./
 
 # Add openclash
-git clone --depth=1 -b master https://github.com/vernesong/OpenClash
-ARCH=mipsle-hardfloat
-cd /workdir/openwrt
-mkdir -p files/etc/openclash/core
-cd files/etc/openclash/core
+# git clone --depth=1 -b master https://github.com/vernesong/OpenClash
+# ARCH=mipsle-hardfloat
+# cd /workdir/openwrt
+# mkdir -p files/etc/openclash/core
+# cd files/etc/openclash/core
 
-clash_main_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/releases/tags/Clash | grep /clash-linux-$ARCH | sed 's/.*url\": \"//g' | sed 's/\"//g')
+# clash_main_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/releases/tags/Clash | grep /clash-linux-$ARCH | sed 's/.*url\": \"//g' | sed 's/\"//g')
 #clash_tun_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/releases/tags/TUN-Premium | grep /clash-linux-$ARCH | sed 's/.*url\": \"//g' | sed 's/\"//g')
 #clash_game_url=$(curl -sL https://api.github.com/repos/vernesong/OpenClash/releases/tags/TUN | grep /clash-linux-$ARCH | sed 's/.*url\": \"//g' | sed 's/\"//g')
 
-wget $clash_main_url && tar zxvf clash-linux-*.gz && rm -f clash-linux-*.gz
+# wget $clash_main_url && tar zxvf clash-linux-*.gz && rm -f clash-linux-*.gz
 #wget -qO- $clash_main_url | gunzip -c > clash
 #wget -qO- $clash_tun_url  | gunzip -c > clash_tun
 #wget -qO- $clash_game_url | tar xOvz > clash_game
 
-chmod +x clash*
+# chmod +x clash*
 
 mkdir /workdir/openwrt/package/lean/redsocks2 
 cd /workdir/openwrt/package/lean/redsocks2 
