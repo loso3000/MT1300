@@ -823,6 +823,14 @@ CONFIG_TARGET_x86_64_Generic=y
 # CONFIG_TARGET_tegra_DEVICE_compulab_trimslice is not set
 # CONFIG_TARGET_x86_generic_Generic is not set
 
+CONFIG_PACKAGE_automount=y
+CONFIG_PACKAGE_autosamba-samba4=y
+
+CONFIG_PACKAGE_luci-app-adguardhome=y
+CONFIG_PACKAGE_luci-app-advanced=y
+CONFIG_PACKAGE_luci-app-dnsfilter=y
+CONFIG_PACKAGE_luci-app-samba4=y
+CONFIG_PACKAGE_luci-app-netspeedtest=y
 # CONFIG_PACKAGE_dnsmasq is not set
 # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
 # CONFIG_PACKAGE_luci-app-fileassistant is not set
