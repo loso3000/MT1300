@@ -40,6 +40,20 @@ cd /workdir/openwrt
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset ./package/new/luci-app-autotimeset
 # svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
+git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-dnsfilter
+
+svn co https://github.com/sirpdboy/build/trunk/automount ./package/new/automount
+svn co https://github.com/sirpdboy/build/trunk/autosamba ./package/new/autosamba
+
+rm -rf ./feeds/luci/applications/luci-app-samba
+svn co https://github.com/sirpdboy/build/trunk/luci-app-samba ./feeds/luci/applications/luci-app-samba
+rm -rf ./package/network/services/samba36 
+svn co https://github.com/sirpdboy/build/trunk/samba36 ./package/network/services/samba36
+rm -rf ./feeds/package/net/samba4 && svn co https://github.com/sirpdboy/build/trunk/samba4 ./feeds/packages/net/samba4
+rm -rf ./feeds/luci/applications/luci-app-samba4
+svn co https://github.com/sirpdboy/build/trunk/luci-app-samba4 ./feeds/luci/applications/luci-app-samba4
 
 # Clone community packages to package/community
 # mkdir package/community
