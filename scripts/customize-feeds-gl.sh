@@ -38,8 +38,8 @@ cd /workdir/openwrt
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netspeedtest ./package/new/luci-app-netspeedtest
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset ./package/new/luci-app-autotimeset
-# svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
-# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
+svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/new/luci-app-vssr
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/lua-maxminddb ./package/new/lua-maxminddb
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/new/AdGuardHome
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-dnsfilter
@@ -65,13 +65,15 @@ svn co https://github.com/sirpdboy/build/trunk/luci-app-samba4 ./feeds/luci/appl
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  /workdir/openwrt/package/new/passwall
 # Add gotop
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop /workdir/openwrt/package/new/totop
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop /workdir/openwrt/package/new/gotop
 
+git clone https://github.com/sirpdboy/build.git ./package/build
 
 # Add adbyby
 # cp -r /workdir/lede/package/lean/adbyby ./
 # cp -r /workdir/lede/package/lean/luci-app-adbyby-plus ./
 
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package/diy/luci-app-openclash
 # Add openclash
 # git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 # ARCH=mipsle-hardfloat
