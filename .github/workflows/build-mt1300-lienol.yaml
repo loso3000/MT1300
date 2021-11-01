@@ -26,7 +26,7 @@ on:
 
 env:
   REPO_OP: https://github.com/Lienol/openwrt
-  REPO_BRANCH: origin/21.02
+  REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
   PATCH_PATH: patch
   CONFIG_FILE: k2p.op
