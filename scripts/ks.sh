@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf   ./feed/packages/libs/libcups
+rm -rf   ./feeds/packages/libs/libcups
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld ./package/ssr
 
