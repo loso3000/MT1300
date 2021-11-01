@@ -1,30 +1,24 @@
-cd /workdir
-mkdir -p /workdir/openwrt/package/lean
+# cd /workdir
+# # mkdir -p /workdir/openwrt/package/lean
 
 # Add luci-app-ssr-plus
-cd /workdir/openwrt/package/lean
-git clone --depth=1 https://github.com/fw876/helloworld
-cd /workdir/openwrt
+git clone --depth=1 https://github.com/fw876/helloworld ./package/ssr
 
-# Clone community packages to package/community
-mkdir package/community
-cd /workdir/openwrt/package/community
-
-# Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
+# Add sirpdboy's Packages
+git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package  ./package/diy
 
 # Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  ./package/pass
 
 # Add OpenClash
-git clone --depth=1 -b master https://github.com/vernesong/OpenClash
+git clone --depth=1 -b master https://github.com/vernesong/OpenClash  ./package/clash
 
 # Add gotop
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop  ./package/gotop
 
 # Add smartdns
-svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
+svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ./package/smartdns
+svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ./package/luci-app-smartdns
 
 # Fix mt76 wireless driver
 #cd  /workdir/openwrt/package/kernel/mt76
