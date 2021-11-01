@@ -13,11 +13,11 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  ./package/pas
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash  ./package/clash
 
 # Add gotop
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop  ./package/gotop
+# svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop  ./package/gotop
 
 # Add smartdns
-svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ./package/smartdns
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ./package/luci-app-smartdns
+# svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ./package/smartdns
+# svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ./package/luci-app-smartdns
 
 # Fix mt76 wireless driver
 #cd  /workdir/openwrt/package/kernel/mt76
