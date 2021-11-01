@@ -29,9 +29,9 @@ env:
   REPO_BRANCH: origin/21.02
   FEEDS_CONF: feeds.conf.default
   PATCH_PATH: patch
-  CONFIG_FILE: mt1300.lienol
+  CONFIG_FILE: k2p.op
   CUSTOM_FEEDS: scripts/customize-feeds-lienol.sh
-  CUSTOM_CONFIG: scripts/customize-config.sh
+  CUSTOM_CONFIG: scripts/ks.sh
   #SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
@@ -75,8 +75,8 @@ jobs:
     - name: Load custom feeds
       run: |
         chmod +x $CUSTOM_FEEDS
-        cd openwrt
-        $GITHUB_WORKSPACE/$CUSTOM_FEEDS
+        # cd openwrt
+        # $GITHUB_WORKSPACE/$CUSTOM_FEEDS
         
     - name: Load custom configuration
       run: |
