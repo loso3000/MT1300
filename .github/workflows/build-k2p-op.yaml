@@ -9,7 +9,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build MT1300 from Lean
+name: Build k2p from openwrt
 
 on:
   repository_dispatch:
