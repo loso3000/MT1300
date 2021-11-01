@@ -1,5 +1,4 @@
-# cd /workdir
-# # mkdir -p /workdir/openwrt/package/lean
+#!/bin/bash
 
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld ./package/ssr
