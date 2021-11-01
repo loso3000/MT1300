@@ -2,5 +2,5 @@ CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
 CONFIG_TARGET_ramips_mt7621_DEVICE_phicomm_k2p=y
 
-CONFIG_DEFAULT_luci-app-cupsd=y
-CONFIG_DEFAULT_cups=y
+CONFIG_PACKAGE_luci-app-cupsd=y
+CONFIG_PACKAGE_cups=y
