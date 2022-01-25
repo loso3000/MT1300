@@ -138,9 +138,7 @@ jobs:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
     
-    - name: Organize plugin
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+    - name: Organize plugin 
       run: |
         if [ -e "$GITHUB_WORKSPACE/scripts/create-plugin-package.sh" ]
         then
@@ -149,10 +147,6 @@ jobs:
         fi
         
     - name: Organize files
-      env:
-        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-      id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
