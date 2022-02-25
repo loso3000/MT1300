@@ -4,14 +4,14 @@ mkdir -p /workdir/openwrt/package/lean
 git clone --depth=1 https://github.com/fw876/helloworld package/ssr
 
 cd /workdir/openwrt
-cd /workdir/lede/package/lean
+cd /workdir/lede/feeds/packages/net/
 plist="redsocks2 tcpping luci-app-zerotier"
 for dir in $plist
 do
     if [ -d $dir ]
     then
         echo "Copying plugin $dir to /workdir/openwrt/package/lean ..."
-        cp -rp $dir /workdir/openwrt/package/lean/
+        cp -rp $dir /workdir/openwrt/feeds/packages/net/
     else
         echo "$dir does not exists..."
     fi
@@ -28,8 +28,8 @@ then
 fi
 
 rm -rf /workdir/openwrt/feeds/packages/net/wget
-cp -rp /workdir/lede/package/lean/wget /workdir/openwrt/feeds/packages/net/wget
-cp -rp /workdir/lede/package/lean/wget /workdir/openwrt/package/lean/wget
+cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/feeds/packages/net/wget
+cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/package/lean/wget
 
 # R8168驱动
 # git clone -b master --depth 1 https://github.com/BROBIRD/openwrt-r8168.git package/new/r8168
@@ -75,9 +75,6 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop /wo
 
 git clone https://github.com/sirpdboy/build.git ./package/build
 
-# Add adbyby
-# cp -r /workdir/lede/package/lean/adbyby ./
-# cp -r /workdir/lede/package/lean/luci-app-adbyby-plus ./
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package/diy/luci-app-openclash
 # Add openclash
@@ -99,5 +96,5 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package
 # chmod +x clash*
 
 mkdir /workdir/openwrt/package/lean/redsocks2 
-cd /workdir/openwrt/package/lean/redsocks2 
+cd /workdir/openwrt/feeds/packages/net/
 wget https://github.com/coolsnowwolf/lede/blob/master/package/lean/redsocks2/Makefile
