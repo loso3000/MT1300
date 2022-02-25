@@ -27,9 +27,10 @@ then
     cp -r /workdir/lede/feeds/packages/net/shadowsocks-libev /workdir/openwrt/feeds/packages/net/shadowsocks-libev
 fi
 
-rm -rf /workdir/openwrt/feeds/packages/net/wget
+rm -rf /workdir/openwrt/feeds/packages/net/wget 
+mkdir /workdir/openwrt/feeds/packages/net/wget -p
 cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/feeds/packages/net/wget
-cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/package/lean/wget
+#cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/package/lean/wget
 
 # R8168驱动
 # git clone -b master --depth 1 https://github.com/BROBIRD/openwrt-r8168.git package/new/r8168
