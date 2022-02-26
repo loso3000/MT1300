@@ -96,6 +96,6 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package
 
 # chmod +x clash*
 
-mkdir /workdir/openwrt/package/lean/redsocks2 
+mkdir /workdir/openwrt/feeds/packages/net/redsocks2 
 cd /workdir/openwrt/feeds/packages/net/
-wget https://github.com/coolsnowwolf/lede/blob/master/package/lean/redsocks2/Makefile
+wget https://github.com/coolsnowwolf/packages/blob/master/net/redsocks2/Makefile
