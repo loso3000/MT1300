@@ -83,12 +83,12 @@ jobs:
         
     - name: Fix compile issue
       run: |
-        cd /workdir/openwrt/staging_dir/host/bin
-        ln -s /usr/bin/upx upx
-        ln -s /usr/bin/upx-ucl upx-ucl
-        ls -l upx*
-        rm -rf /workdir/openwrt/feeds/packages/lang/golang
-        cp -r /workdir/lede/feeds/packages/lang/golang /workdir/openwrt/feeds/packages/lang/golang
+        # cd /workdir/openwrt/staging_dir/host/bin
+        # ln -s /usr/bin/upx upx
+        # ln -s /usr/bin/upx-ucl upx-ucl
+        # ls -l upx*
+        # rm -rf /workdir/openwrt/feeds/packages/lang/golang
+        # cp -r /workdir/lede/feeds/packages/lang/golang /workdir/openwrt/feeds/packages/lang/golang
         
     - name: Load custom configuration
       run: |
