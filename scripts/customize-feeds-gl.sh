@@ -51,8 +51,17 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/AdGuardHome ./package/
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/new/luci-app-adguardhome
 git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-dnsfilter
 
-svn co https://github.com/sirpdboy/build/trunk/automount ./package/new/automount
-svn co https://github.com/sirpdboy/build/trunk/autosamba ./package/new/autosamba
+# svn co https://github.com/sirpdboy/build/trunk/automount ./package/new/automount
+# svn co https://github.com/sirpdboy/build/trunk/autosamba ./package/new/autosamba
+
+svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap  ./package/libs/
+svn co https://github.com/coolsnowwolf/packages/trunk/net/kcptun  ./package/lean/
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2  ./package/lean/
+
+
+#mkdir /workdir/openwrt/feeds/packages/net/redsocks2 
+#cd /workdir/openwrt/feeds/packages/net/
+#wget https://github.com/coolsnowwolf/packages/blob/master/net/redsocks2/Makefile
 
 rm -rf ./feeds/luci/applications/luci-app-samba
 svn co https://github.com/sirpdboy/build/trunk/luci-app-samba ./feeds/luci/applications/luci-app-samba
@@ -95,7 +104,3 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package
 #wget -qO- $clash_game_url | tar xOvz > clash_game
 
 # chmod +x clash*
-
-mkdir /workdir/openwrt/feeds/packages/net/redsocks2 
-cd /workdir/openwrt/feeds/packages/net/
-wget https://github.com/coolsnowwolf/packages/blob/master/net/redsocks2/Makefile
