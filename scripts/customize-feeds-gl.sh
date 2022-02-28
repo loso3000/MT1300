@@ -175,6 +175,8 @@ svn co https://github.com/sirpdboy/build/trunk/luci-app-samba4 ./feeds/luci/appl
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/r8152 package/new/r8152
 sed -i 's,kmod-usb-net-rtl8152,kmod-usb-net-rtl8152-vendor,g' target/linux/rockchip/image/armv8.mk
 # UPX 可执行软件压缩
+rm -rf   tools/ucl
+rm -rf  tools/upx
 svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 sed -i 'N;24a\tools-y += ucl upx' tools/Makefile
