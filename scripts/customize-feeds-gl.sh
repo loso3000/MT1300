@@ -133,8 +133,6 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel
 # patch -p1 <../PATCH/r8168/r8168-fix_LAN_led-for_r4s-from_TL.patch
 # R8125驱动
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/r8125 package/new/r8125
-# R8152驱动
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/r8152 package/new/r8152
 cd /workdir/openwrt
 #add sirpdboy
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-advanced ./package/new/luci-app-advanced
@@ -173,6 +171,14 @@ svn co https://github.com/sirpdboy/build/trunk/luci-app-samba4 ./feeds/luci/appl
 # Add Lienol's Packages
 # git clone --depth=1 https://github.com/Lienol/openwrt-package  /workdir/openwrt/package/new/
 
+# R8152驱动
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/r8152 package/new/r8152
+sed -i 's,kmod-usb-net-rtl8152,kmod-usb-net-rtl8152-vendor,g' target/linux/rockchip/image/armv8.mk
+# UPX 可执行软件压缩
+sed -i '/patchelf pkgconf/i\tools-y += ucl upx' ./tools/Makefile
+sed -i '\/autoconf\/compile :=/i\$(curdir)/upx/compile := $(curdir)/ucl/compile' ./tools/Makefile
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/tools/upx tools/upx
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/tools/ucl tools/ucl
 
 git clone https://github.com/sirpdboy/build.git ./package/build
 
