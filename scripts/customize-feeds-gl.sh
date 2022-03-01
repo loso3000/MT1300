@@ -158,8 +158,11 @@ git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-
 -rm -rf  ./feeds/packages/trunk/kcptun
 -rm -rf  ./feeds/packages/trunk/redsocks2
 
+
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/libs/libcap ./package/libs/libcap
+
 svn co https://github.com/coolsnowwolf/lede/trunk/package/utils/bcm27xx-userland  ./package/utils/
-svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap  ./package/libs/
+# svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap  ./package/libs/
 svn co https://github.com/coolsnowwolf/packages/trunk/net/kcptun  ./feeds/packages/trunk/kcptun
 svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2  ./feeds/packages/trunk/redsocks2
 
