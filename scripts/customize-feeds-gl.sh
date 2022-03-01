@@ -1,7 +1,13 @@
 cd /workdir
 mkdir -p /workdir/openwrt/package/lean
-cd /workdir/openwrt
+cd /workdir/openwrt./
 
+sed -i './feeds/gli-pub/openvswitch/Makefile/d' Makefile
+
+git clone https://github.com/sirpdboy/build.git ./package/build
+rm -rf  ./package/build/autocore
+rm -rf  ./package/build/automount
+rm -rf  ./package/build/my-autocore
 # OpenClash
 git clone --single-branch --depth 1 -b dev https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
 # 花生壳内网穿透
@@ -147,14 +153,15 @@ git clone https://github.com/garypang13/luci-app-dnsfilter.git package/luci-app-
 # svn co https://github.com/sirpdboy/build/trunk/automount ./package/new/automount
 # svn co https://github.com/sirpdboy/build/trunk/autosamba ./package/new/autosamba
 
+-rm -rf  ./package/utils/bcm27xx-userland
+-rm -rf  ./package/libs/libcap
+-rm -rf  ./feeds/packages/trunk/kcptun
+-rm -rf  ./feeds/packages/trunk/redsocks2
+
+svn co https://github.com/coolsnowwolf/lede/trunk/package/utils/bcm27xx-userland  ./package/utils/
 svn co https://github.com/coolsnowwolf/lede/trunk/package/libs/libcap  ./package/libs/
-svn co https://github.com/coolsnowwolf/packages/trunk/net/kcptun  ./package/lean/
-svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2  ./package/lean/
-
-
-#mkdir /workdir/openwrt/feeds/packages/net/redsocks2 
-#cd /workdir/openwrt/feeds/packages/net/
-#wget https://github.com/coolsnowwolf/packages/blob/master/net/redsocks2/Makefile
+svn co https://github.com/coolsnowwolf/packages/trunk/net/kcptun  ./feeds/packages/trunk/kcptun
+svn co https://github.com/coolsnowwolf/packages/trunk/net/redsocks2  ./feeds/packages/trunk/redsocks2
 
 rm -rf ./feeds/luci/applications/luci-app-samba
 svn co https://github.com/sirpdboy/build/trunk/luci-app-samba ./feeds/luci/applications/luci-app-samba
@@ -181,6 +188,4 @@ svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
 svn checkout https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 sed -i 'N;24a\tools-y += ucl upx' tools/Makefile
 sed -i 'N;40a\$(curdir)/upx/compile := $(curdir)/ucl/compile' tools/Makefile
-
-git clone https://github.com/sirpdboy/build.git ./package/build
 
