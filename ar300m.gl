@@ -1,10 +1,10 @@
 # 2021-06-17 updated from 19.07.2 to 19.07.7
 # Automatically generated file; DO NOT EDIT.
 # OpenWrt Configuration
-#
-CONFIG_TARGET_ath79=y
-CONFIG_TARGET_ath79_nand=y
-CONFIG_TARGET_ath79_nand_DEVICE_glinet_gl-ar300m-nor=y
+
+CONFIG_TARGET_ar71xx=y
+CONFIG_TARGET_ar71xx_generic=y
+CONFIG_TARGET_ar71xx_generic_DEVICE_gl-ar300m=y
 CONFIG_CPU_TYPE="24kc"
 CONFIG_LINUX_4_14=y
 CONFIG_DEFAULT_base-files=y
