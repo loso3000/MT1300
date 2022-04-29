@@ -61,20 +61,9 @@ mkdir package/community
 cd /workdir/openwrt/package/community
 
 # Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
+#git clone https://github.com/sirpdboy/build.git ./package/build
+#git clone https://github.com/loso3000/other ./package/other
 
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  package/passwall
 svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/passwall/luci-app-passwall
-
-# Add gotop
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
-
-# Add smartdns
-#svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
-#svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
-
-# Add adbyby
-cp -r /workdir/lede/package/lean/adbyby ./
-cp -r /workdir/lede/package/lean/luci-app-adbyby-plus ./
- 
