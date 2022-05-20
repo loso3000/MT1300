@@ -4,10 +4,14 @@ mkdir -p /workdir/openwrt/package/lean
 
 # Add luci-app-ssr-plus
 cd /workdir/openwrt/package/lean
-git clone --depth=1 https://github.com/fw876/helloworld
+# git clone --depth=1 https://github.com/fw876/helloworld
 
 cd /workdir/openwrt
 
+# Add Lienol's Packages
+git clone https://github.com/sirpdboy/build.git ./package/build
+git clone https://github.com/sirpdboy/sirpdboy-package ./package/diy
+git clone https://github.com/loso3000/other ./package/other
 # Passwall
 rm -rf ./feeds/packages/net/pdnsd-alt
 rm -rf ./feeds/packages/net/shadowsocks-libev
@@ -110,10 +114,7 @@ cp -rp /workdir/lede/feeds/packages/net/wget /workdir/openwrt/feeds/packages/net
 mkdir package/community
 cd /workdir/openwrt/package/community
 
-# Add Lienol's Packages
-#git clone https://github.com/sirpdboy/build.git ./package/build
-#git clone https://github.com/loso3000/other ./package/other
 
 # Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  package/passwall
-svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/passwall/luci-app-passwall
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall  package/passwall
+# svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/passwall/luci-app-passwall
