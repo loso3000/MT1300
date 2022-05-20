@@ -78,6 +78,7 @@ ln -sf ../../../feeds/packages/net/shadowsocks-rust ./package/feeds/packages/sha
 svn export https://github.com/immortalwrt/packages/trunk/net/kcptun feeds/packages/net/kcptun
 ln -sf ../../../feeds/packages/net/kcptun ./package/feeds/packages/kcptun
 
+
 cd /workdir/lede/package/lean
 plist="shadowsocksr-libev pdnsd-alt microsocks dns2socks simple-obfs v2ray-plugin v2ray xray trojan ipt2socks redsocks2 kcptun luci-app-zerotier"
 for dir in $plist
