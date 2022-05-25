@@ -8,10 +8,14 @@ cd /workdir/openwrt/package/lean
 
 cd /workdir/openwrt
 
+echo '替换smartdns'
+rm -rf ./feeds/packages/net/smartdns 
+
 # Add Lienol's Packages
 git clone https://github.com/sirpdboy/build.git ./package/build
 git clone https://github.com/sirpdboy/sirpdboy-package ./package/diy
 git clone https://github.com/loso3000/other ./package/other
+# Passwall
 # Passwall
 rm -rf ./feeds/packages/net/pdnsd-alt
 rm -rf ./feeds/packages/net/shadowsocks-libev
@@ -31,15 +35,24 @@ rm -rf ./feeds/packages/net/tcping
 rm -rf ./feeds/packages/net/v2ray*
 rm -rf ./feeds/packages/net/xray*
 rm -rf ./feeds/packages/net/trojan*
+
+#bypass
+#rm -rf package/build/pass/luci-app-bypass
+#git clone https://github.com/kiddin9/openwrt-bypass package/bypass
+sed -i 's,default n,default y,g' ./package/build/pass/luci-app-bypass/Makefile
+sed -i 's,default n,default y,g' ./package/bypass/luci-app-bypass/Makefile
+
+#  git clone https://github.com/loso3000/openwrt-passwall package/passwall
+# svn co https://github.com/loso3000/openwrt-passwall/trunk/luci-app-passwall  package/passwall/luci-app-passwall
+
 git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall package/passwall/luci-app-passwall
-
-# pushd package/passwall/luci-app-passwall
-# sed -i 's,default n,default y,g' Makefile
-# popd
-# pushd package/pass/luci-app-ssr-plus
-# sed -i 's,default n,default y,g' Makefile
-# popd
+pushd package/passwall/luci-app-passwall
+sed -i 's,default n,default y,g' Makefile
+popd
+pushd package/pass/luci-app-ssr-plus
+sed -i 's,default n,default y,g' Makefile
+popd
 
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/new/tcping
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go package/new/trojan-go
@@ -73,9 +86,9 @@ svn export https://github.com/fw876/helloworld/trunk/v2ray-core package/lean/v2r
 svn export https://github.com/fw876/helloworld/trunk/xray-core package/lean/xray-core
 svn export https://github.com/fw876/helloworld/trunk/v2ray-plugin package/lean/v2ray-plugin
 svn export https://github.com/fw876/helloworld/trunk/xray-plugin package/lean/xray-plugin
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust feeds/packages/net/shadowsocks-rust
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/dns2tcp package/lean/dns2tcp
 svn export https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray-geodata package/lean/v2ray-geodata
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/shadowsocks-rust feeds/packages/net/shadowsocks-rust
 #svn export https://github.com/immortalwrt/packages/trunk/net/shadowsocks-rust feeds/packages/net/shadowsocks-rust
 sed -i '/Build\/Compile/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $$(PKG_BUILD_DIR)/$(component)' feeds/packages/net/shadowsocks-rust/Makefile
 ln -sf ../../../feeds/packages/net/shadowsocks-rust ./package/feeds/packages/shadowsocks-rust
