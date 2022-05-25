@@ -20,9 +20,10 @@ CONFIG_TARGET_ALL_PROFILES=y
 # CONFIG_PACKAGE_luci-app-filebrowser is not set
 CONFIG_PACKAGE_luci-app-firewall=y
 CONFIG_PACKAGE_luci-app-openclash=n
-CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=n
 CONFIG_PACKAGE_luci-app-ramfree=n
 CONFIG_PACKAGE_luci-app-samba=n
+CONFIG_PACKAGE_luci-app-bypass=y
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
