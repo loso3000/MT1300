@@ -36,6 +36,9 @@ rm -rf ./feeds/packages/net/v2ray*
 rm -rf ./feeds/packages/net/xray*
 rm -rf ./feeds/packages/net/trojan*
 
+# ChinaDNS
+git clone -b luci --depth 1 https://github.com/pexcn/openwrt-chinadns-ng.git package/new/luci-app-chinadns-ng
+svn export https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng package/new/chinadns-ng
 #bypass
 #rm -rf package/build/pass/luci-app-bypass
 #git clone https://github.com/kiddin9/openwrt-bypass package/bypass
